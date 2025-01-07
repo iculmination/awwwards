@@ -14,7 +14,7 @@ const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
-  const totalVideos = 3;
+  const totalVideos = 4;
   const nextVideoRef = useRef(null);
 
   const handleVideoLoad = () => {
@@ -64,15 +64,16 @@ const Hero = () => {
       borderRadius: "0 0 40% 10%",
     });
     gsap.from("#video-frame", {
-      clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       borderRadius: "0 0 0 0",
       ease: "power1.inOut",
-
       scrollTrigger: {
+        id: "#video-frame",
         trigger: "#video-frame",
         start: "center center",
         end: "bottom center",
         scrub: true,
+        // markers: true,
       },
     });
   });
@@ -118,7 +119,7 @@ const Hero = () => {
             loop
             muted
             id="next-video"
-            className="aboslute-center invisible absolute z-20 size-64 object-cover object-center"
+            className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
 
