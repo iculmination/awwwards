@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useRef, useEffect } from "react";
 
+// eslint-disable-next-line
 const AnimatedTitle = ({ title, containerClass }) => {
   const containerRef = useRef(null);
 
@@ -28,6 +29,7 @@ const AnimatedTitle = ({ title, containerClass }) => {
 
   return (
     <div ref={containerRef} className={`animated-title ${containerClass}`}>
+      {/* eslint-disable-next-line */}
       {title.split("<br />").map((line, index) => (
         <div
           className="flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3"

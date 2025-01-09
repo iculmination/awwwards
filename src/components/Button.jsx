@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const Button = ({ title, id, rightIcon, leftIcon, containerClass }) => {
   return (
     <button
