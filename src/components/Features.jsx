@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 
+// eslint-disable-next-line
 const BentoTilt = ({ children, className = "" }) => {
   const [transformStyle, setTransformStyle] = useState("");
   const itemRef = useRef();
@@ -22,14 +23,14 @@ const BentoTilt = ({ children, className = "" }) => {
     setTransformStyle(newTransformStyle);
   };
 
-  const handleMouseLeave = (e) => {
+  const handleMouseLeave = () => {
     setTransformStyle("");
   };
 
   return (
     <div
       ref={itemRef}
-      className={` ${className}`}
+      className={`duration-150 ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ transform: transformStyle }}
@@ -39,6 +40,7 @@ const BentoTilt = ({ children, className = "" }) => {
   );
 };
 
+// eslint-disable-next-line
 const BentoCard = ({ src, title, description }) => {
   return (
     <div className="relative size-full">
