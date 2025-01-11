@@ -1,8 +1,42 @@
+import { FaDiscord, FaGithub, FaTwitch, FaTwitter } from "react-icons/fa";
+
+const links = [
+  { href: "https://discord.com", icon: <FaDiscord /> },
+  { href: "https://twitter.com", icon: <FaTwitter /> },
+  { href: "https://github.com", icon: <FaGithub /> },
+  { href: "https://twitch.com", icon: <FaTwitch /> },
+];
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <footer className="w-screen bg-violet-300 py-4 text-black">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
+        <p className="text-center text-sm md:text-left">
+          &copy; Nova 2024. All right reserved
+        </p>
+        <div className="flex justify-center gap-4 md:justify-start">
+          {links.map((link) => (
+            <a
+              key={link}
+              href={link.href}
+              target="_blank"
+              className="text-black transition-colors duration-500 ease-in-out hover:text-white"
+              rel="noopener noreferrer"
+            >
+              {link.icon}
+            </a>
+          ))}
+        </div>
 
-export default Footer
+        <a
+          href="#privacy-policy"
+          className="text-center text-sm md:text-right transition-colors duration-500 ease-in-out hover:text-white"
+        >
+          Privacy Policy
+        </a>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
